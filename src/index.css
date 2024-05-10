@@ -1,0 +1,26 @@
+@import url('//fonts.googleapis.com/earlyaccess/notosanskr.css');
+
+@import url('https://fastly.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+
+@font-face {
+  font-family: 'Ownglyph_Dailyokja-Rg';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2403@1.0/Ownglyph_Dailyokja-Rg.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+	font-family: "galmuri9", 'Noto Sans KR', sans-serif;
+}
+
+li, ol, ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}

@@ -1,0 +1,21 @@
+.pokemon_evolution_container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	p{
+		background-color: #fff;
+		padding: 2rem 0;
+
+	}
+}
+
+.pokemon_evolution_item {
+	display: flex;
+	flex-direction: column;
+
+	img {
+		width: 9rem;
+	}
+}

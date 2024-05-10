@@ -10,7 +10,17 @@
 	border-radius: 1rem;
 
 	@media (max-width: 550px) {
-		width: calc(100% - 20px);
+		width: calc(100% - 40px);
+		height: 700px;
+		overflow-y: scroll;
+		overflow-x: hidden;
+
+		&::-webkit-scrollbar {
+			display: none; /* 크롬, 사파리, 오페라, 엣지 */
+		}
+
+		-ms-overflow-style: none; /* 인터넷 익스플로러 */
+		scrollbar-width: none; /* 파이어폭스 */
 	}
 }
 

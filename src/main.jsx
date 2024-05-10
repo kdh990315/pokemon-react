@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import ReactDOM from 'react-dom/client'
 import PokemonMain from './routes/PokemonMain'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import PokemonDetail, {loader as PokemonDetailLoader} from './routes/PokemonDetail'
+// import PokemonDetail, {loader as PokemonDetailLoader} from './routes/PokemonDetail'
 import RootRayout from './routes/RootRayout'
 import NotFoundPokemon from './routes/NotFoundPokemon'
+
+const PokemonDetail = lazy(() => import('./routes/PokemonDetail'));
 
 const router = createBrowserRouter([
   {
@@ -16,8 +18,9 @@ const router = createBrowserRouter([
         children: [
           {
             path: '/:pokemonId',
-            element: <PokemonDetail></PokemonDetail>,
-            loader: PokemonDetailLoader,
+            element: <Suspense fallback={<div>로딩중...</div>}><PokemonDetail></PokemonDetail></Suspense>,
+            // loader: PokemonDetailLoader,
+            loader: ({params}) => import('./routes/PokemonDetail').then(module => module.loader({params})),
           },
           {
             path: '/notFoundPokemon',

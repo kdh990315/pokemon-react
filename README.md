@@ -46,6 +46,15 @@
   (이 기능을 구현할 때 한글로 포켓몬 이름을 지원하는 api를 찾지 못해 모든 포켓몬의 한글이름과 도감번호를 json형태로로 제작하여 find()메서드를 활용하여 도감번호를 반환해주는 형식으로 제작하였습니다)
   
   <img width=500px src="https://github.com/kdh990315/pokemon-react/assets/104114383/5539223e-3bea-4be9-9f23-1320b02f3d86" alt="포켓몬검색창">
+  <br>
+  <br>
+  <br>
+  
+- 사용자가 화면 우상단의 아이콘을 클릭하면 다크모드와 화이트모드로 전환할 수 있게 구현하였습니다. useContext훅을 사용해 전역적으로 상태를 관리할 수 있도록 구현했습니다.
+  
+  <img width=500px src="https://github.com/kdh990315/pokemon-react/assets/104114383/86c4a912-2252-4a0e-8ace-21ba9c3e5cff" alt="다크모드">
+ 
+
 
   <br>
   <br>

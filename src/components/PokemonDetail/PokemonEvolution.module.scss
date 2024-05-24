@@ -5,10 +5,16 @@
 	align-items: center;
 
 	p{
-		background-color: #fff;
 		padding: 2rem 0;
-
 	}
+
+	&.dark_mode {
+		color: rgba(255,255,255, .95);
+	}
+}
+
+.dark_mode {
+	color: rgba(255,255,255, .95);
 }
 
 .pokemon_evolution_item {

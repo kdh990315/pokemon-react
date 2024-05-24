@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import classes from './PokemonEvolution.module.scss';
 import { Link } from "react-router-dom";
+import { ThemeContext } from "../../context/ThemeContext";
+import classNames from "classnames";
 
 const PokemonEvolution = (props) => {
 	const [pokemonData, setPokemonData] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
+	const {darkMode} = useContext(ThemeContext)
 
 	const fetchPokemonEvolutionData = async () => {
 		setIsLoading(true);
@@ -94,7 +97,7 @@ const PokemonEvolution = (props) => {
 	}, [])
 
 	return (
-		<div className={ classes.pokemon_evolution_container }>
+		<div className={classNames(classes.pokemon_evolution_container, {[classes.dark_mode] : darkMode})}>
 			{ isLoading === true && (
 				<p>로딩중...</p>
 			) }
@@ -104,7 +107,7 @@ const PokemonEvolution = (props) => {
 					<React.Fragment key={ idx }>
 						<Link to={ `/${data.id}` } className={ classes.pokemon_evolution_item }>
 							<img src={ data.url } alt={ data.name } />
-							<span>{ data.name }</span>
+							<span className={darkMode ? [classes.dark_mode] : ''}>{ data.name }</span>
 						</Link>
 						{ idx !== pokemonData.length - 1 && <span>&gt;</span> }
 					</React.Fragment>

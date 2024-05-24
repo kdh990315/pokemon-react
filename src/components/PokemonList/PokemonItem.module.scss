@@ -3,6 +3,10 @@
 	height: 300px;
 	border: 1px solid #ccc;
 	border-radius: 1rem;
+
+	&.dark_mode {
+		background-color: #272829;
+	}
 }
 
 .pokemon_num_container {
@@ -10,6 +14,13 @@
 	text-align: right;
 	padding: 5px 10px;
 	color: #444;
+
+	&.dark_mode {
+
+		span {
+			color: rgba(255,255,255, .55);
+		}
+	}
 }
 
 .pokemon_item_container {
@@ -22,6 +33,10 @@
 	span {
 		font-size: 1.9rem;
 		letter-spacing: .5px;
+	}
+
+	&.dark_mode {
+		color: rgba(255,255,255, .95);
 	}
 }
 

@@ -22,6 +22,11 @@
 		-ms-overflow-style: none; /* 인터넷 익스플로러 */
 		scrollbar-width: none; /* 파이어폭스 */
 	}
+
+	&.dark_mode {
+		background-color: #272829;
+		color: rgba(255,255,255, .95);
+	}
 }
 
 .pokemonDetail_header {
@@ -53,6 +58,10 @@
 	position: absolute;
 	right: 15px;
 	top: .6rem;
+
+	&.dark_mode {
+		color: rgba(255,255,255, .95);
+	}
 }
 
 .pokemonDetail_info_container {
@@ -112,8 +121,12 @@
 	background-color: #d5d5d5;
 	border-radius: .6rem;
 	width: 50%;
-	margin-bottom: 15px;
+	margin: 0 auto 15px auto;
 	padding: .2rem 1.2rem;
+
+	&.dark_mode {
+		background-color: #3b3636;
+	}
 }
 
 .pokemon_evolution_wrap {
@@ -121,11 +134,4 @@
 	margin-top: 50px;
 	text-align: center;
 
-	p {
-		display: inline-block;
-		width: calc(100% - 100px);
-		border-radius: .6rem;
-		background-color: #d5d5d5;
-		padding: .2rem 1.2rem;
-	}
 }

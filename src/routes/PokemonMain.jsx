@@ -1,5 +1,6 @@
-import PokemonList from "../components/PokemonList/PokemonList";
-import Search from "../components/Search/Search";
+import React from "react";
+import PokemonList from "../components/PokemonList/PokemonList.jsx";
+import Search from "../components/Search/Search.jsx";
 
 const PokemonMain = () => {
 

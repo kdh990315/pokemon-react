@@ -3,21 +3,26 @@ import classes from './PokemonDetail.module.scss';
 import Modal from "../ui/Modal";
 import PokemonTypeContainer from "../components/PokemonList/PokemonTypeContainer";
 import PokemonEvolution from "../components/PokemonDetail/PokemonEvolution";
+import classNames from "classnames";
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 const PokemonDetail = () => {
 	const newData = useLoaderData();
+
+	const {darkMode} = useContext(ThemeContext);
 
 	const params = useParams();
 	const pokemon_id = params.pokemonId;
 
 	return (
 		<Modal>
-			<div className={ classes.pokemonDetail_wrap }>
+			<div className={classNames(classes.pokemonDetail_wrap, {[classes.dark_mode] : darkMode})}>
 				<div className={ classes.pokemonDetail_container }>
 					<div className={ classes.pokemonDetail_header }>
 						<span>No.{ pokemon_id }</span>
 						<strong>{ newData.name }</strong>
-						<Link to='..' className={ classes.close_btn }>닫기</Link>
+						<Link to='..' className={classNames(classes.close_btn, {[classes.dark_mode]: darkMode}) }>닫기</Link>
 					</div>
 
 					<div className={ classes.pokemonDetail_info_container }>
@@ -40,7 +45,7 @@ const PokemonDetail = () => {
 						{/* 신장/체중 */ }
 						<div className={classes.pokemon_basicinfo_wrap}>
 							<div className={classes.pokemon_basicinfo_container}>
-								<div className={classes.pokemon_basicinfo_title}>
+								<div className={classNames(classes.pokemon_basicinfo_title, {[classes.dark_mode] : darkMode})}>
 									<span>키</span>
 								</div>
 								<div>
@@ -49,7 +54,7 @@ const PokemonDetail = () => {
 							</div>
 
 							<div className={classes.pokemon_basicinfo_container}>
-								<div className={classes.pokemon_basicinfo_title}>
+								<div className={classNames(classes.pokemon_basicinfo_title, {[classes.dark_mode] : darkMode})}>
 									<span>무게</span>
 								</div>
 								<div>
@@ -63,7 +68,9 @@ const PokemonDetail = () => {
 
 						{/* 진화정보 */ }
 						<div className={classes.pokemon_evolution_wrap}>
-							<p>진화정보</p>
+						<div className={classNames(classes.pokemon_basicinfo_title, {[classes.dark_mode] : darkMode})}>
+									<span>진화정보</span>
+								</div>
 							<PokemonEvolution url={newData.evolutionUrl} id={pokemon_id}></PokemonEvolution>
 						</div>
 					</div>
